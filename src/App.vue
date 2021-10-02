@@ -1,15 +1,29 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <Directory/>
+  <FileSystem @fileToOpen="updateFileToOpen"/>
+  <Monaco @fileToOpen="path"/>
 </template>
 
 <script>
-import Directory from './components/Directory'
+import FileSystem from './components/FileSystem'
+import Monaco from "@/components/Monaco";
 
 export default {
   name: 'App',
   components: {
-    Directory
+    Monaco,
+    FileSystem
+  },
+  emits: ["path"],
+  methods: {
+    updateFileToOpen(path) {
+      this.$emit('fileToOpen', path)
+    }
+  },
+  data() {
+    return {
+      path: ""
+    }
   }
 }
 </script>
@@ -19,7 +33,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }

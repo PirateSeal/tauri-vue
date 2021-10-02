@@ -12,7 +12,9 @@
   "dependencies": {
     "@tauri-apps/api": "^1.0.0-beta.8",
     "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "monaco-editor": "^0.28.1",
+    "vue": "^3.0.0",
+    "vue-monaco-editor": "^0.0.19"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
